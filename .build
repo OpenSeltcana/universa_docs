@@ -4,7 +4,7 @@ fonts/icomoon.eot
 fonts/icomoon.svg
 fonts/icomoon.ttf
 fonts/icomoon.woff
-dist/sidebar_items-0ab074e000.js
+dist/sidebar_items-67d2ede6d9.js
 api-reference.html
 search.html
 404.html
@@ -14,10 +14,6 @@ Universa.Channel.html
 Universa.Entity.html
 Universa.Event.html
 Universa.Location.html
-Universa.Parser.Help.html
-Universa.Parser.Look.html
-Universa.Parser.OOC.html
-Universa.Parser.Say.html
 Universa.TcpServer.html
 Universa.Template.html
 Universa.Terminal.html
@@ -52,5 +48,9 @@ Universa.Component.Player.html
 Universa.Shell.Login.html
 Universa.Shell.Player.html
 Universa.Shell.Registration.html
+Universa.Parser.Help.html
+Universa.Parser.Look.html
+Universa.Parser.OOC.html
+Universa.Parser.Say.html
 Mix.Tasks.Initialize.html
 index.html
