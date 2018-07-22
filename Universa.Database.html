@@ -1,0 +1,433 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.18.4">
+    <title>Universa.Database – universa v0.1.0</title>
+    <link rel="stylesheet" href="dist/app-480ffdc169.css" />
+    
+    <script src="dist/sidebar_items-0ab074e000.js"></script>
+    
+    
+    
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        universa
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.1.0
+      </h2>
+    </div>
+    
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+      <li><a id="tasks-list" href="#full-list">Mix Tasks</a></li>
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">universa v0.1.0</small>
+        Universa.Database
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Allows for interaction with the database, both reading and writing.</p>
+<h1>Creating database tables</h1>
+<p>See <a href="Universa.Database.Table.html"><code class="inline">Universa.Database.Table</code></a></p>
+<p>After which you can start making changes using this modue, for example:</p>
+<pre><code class="iex elixir">iex&gt; alias Universa.Database
+Universa.Database
+
+iex&gt; Database.run(fn -&gt; 
+  Database.write(%Database.NewObject{id: 20})
+  Database.write(%Database.NewObject{id: 20, count: 2, test: :ok})
+end)
+:ok</code></pre>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete/1">delete(object)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Removes <code class="inline">object</code> with matching primarykey (other properties are ignored) out of the database</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#find/2">find(type, properties)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Finds objects of module <code class="inline">type</code> with matching <code class="inline">properties</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read/2">read(type, properties)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Retrieves the full version of <code class="inline">object</code> with matching primarykey (other properties are ignored) out of the database</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#run/1">run(func)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Runs the <code class="inline">func</code> inside a <a href="http://www.erlang.org/doc/man/mnesia.html#transaction-2"><code class="inline">:mnesia.transaction/2</code></a></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#save/0">save()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Stores all active tables on the disk, so if the server is restarted will use
+those values instead of empty</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#write/1">write(object)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Adds <code class="inline">object</code> to the database</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="delete/1">
+  
+  
+  <div class="detail-header">
+    <a href="#delete/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete(object)</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>delete(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Removes <code class="inline">object</code> with matching primarykey (other properties are ignored) out of the database</p>
+<p>Will always return <code class="inline">:ok</code> regardless of wether a key was removed or not.</p>
+<h2 id="delete/1-examples" class="section-heading">
+  <a href="#delete/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; alias Universa.Database
+Universa.Database
+
+iex&gt; Database.run(fn -&gt; Database.delete(%Database.Entity{uuid: &quot;test&quot;}) end)
+:ok
+
+iex&gt; Database.run(fn -&gt; Database.delete(%Database.Entity{uuid: &quot;test&quot;}) end)
+:ok</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="find/2">
+  
+  
+  <div class="detail-header">
+    <a href="#find/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">find(type, properties)</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>find(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Finds objects of module <code class="inline">type</code> with matching <code class="inline">properties</code>.</p>
+<p>Always returns a list with all matching objects.</p>
+<h2 id="find/2-examples" class="section-heading">
+  <a href="#find/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; alias Universa.Database
+Universa.Database
+
+iex&gt; Database.run(fn -&gt; Database.find(Database.Entity, [uuid: &quot;test&quot;]) end)
+[%Universa.Database.Entity{systems: [], uuid: &quot;test&quot;}]
+
+iex&gt; Database.run(fn -&gt; Database.find(Database.Entity, [uuid: &quot;not_test&quot;]) end)
+[]</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="read/2">
+  
+  
+  <div class="detail-header">
+    <a href="#read/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">read(type, properties)</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>read(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Retrieves the full version of <code class="inline">object</code> with matching primarykey (other properties are ignored) out of the database </p>
+<p>If <code class="inline">object</code> is found in database, will return its entirety, else will return empty.</p>
+<h2 id="read/2-examples" class="section-heading">
+  <a href="#read/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; alias Universa.Database
+Universa.Database
+iex&gt; Database.run(fn -&gt; Database.read(%Database.Entity{uuid: &quot;test&quot;}) end)
+[{Database.Entity, &quot;test&quot;, []}]
+iex&gt; Database.run(fn -&gt; Database.read(%Database.Entity{uuid: &quot;not_test&quot;}) end)
+[]</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="run/1">
+  
+  
+  <div class="detail-header">
+    <a href="#run/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">run(func)</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>run((() -> <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>())) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Runs the <code class="inline">func</code> inside a <a href="http://www.erlang.org/doc/man/mnesia.html#transaction-2"><code class="inline">:mnesia.transaction/2</code></a>.</p>
+<p>Runs the entire code in one go, it ensures either all changes are made or none
+of them are made. Also allows multiple processes to change the same record
+without interfereing with another and prevents deadlocks by retrying only three
+times.</p>
+<h2 id="run/1-examples" class="section-heading">
+  <a href="#run/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; Database.run(fn -&gt;
+  Enum.each(Database.find(Database.Entity, []), fn(ent) -&gt;
+      Database.delete(ent)
+  end)
+end)
+:ok</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="save/0">
+  
+  
+  <div class="detail-header">
+    <a href="#save/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">save()</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>save() :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Stores all active tables on the disk, so if the server is restarted will use
+those values instead of empty.</p>
+<p>WARNING: also saves databases not part of <a href="Universa.html"><code class="inline">Universa</code></a>.</p>
+
+  </section>
+</div>
+<div class="detail" id="write/1">
+  
+  
+  <div class="detail-header">
+    <a href="#write/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">write(object)</span>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>write(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Adds <code class="inline">object</code> to the database</p>
+<p>Will always return <code class="inline">:ok</code> regardless of wether an object existed with the same
+primary key or not. If another object has the same primary key, it will get
+overwritten.</p>
+<h2 id="write/1-examples" class="section-heading">
+  <a href="#write/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; alias Universa.Database
+Universa.Database
+
+iex&gt; Database.run(fn -&gt; Database.write(%Database.Entity{uuid: &quot;test&quot;}) end)
+:ok
+
+iex&gt; Database.run(fn -&gt; Database.write(%Database.Entity{uuid: &quot;test&quot;}) end)
+:ok</code></pre>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.18.4),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-9bd040e5e5.js"></script>
+  
+  
+  
+  
+  </body>
+</html>
+
